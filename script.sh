@@ -12,7 +12,8 @@ swapon /swapfile
 echo "/swapfile   none    swap    sw    0   0" >> /etc/fstab
 echo "vm.swappiness=10" >> /etc/sysctl.d/99-better-swap.conf
 echo "vm.vfs_cache_pressure=50" >> /etc/sysctl.d/99-better-swap.conf
-sysctl -p
+sysctl vm.swappiness=10
+sysctl vm.vfs_cache_pressure=50
 
 echo ':: Installing tools'
 apt-get install -y htop
